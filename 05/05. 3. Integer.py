@@ -1,4 +1,8 @@
-a = int(input("Enter the base: "))
-b = int(input("Enter the exponent: "))
-result = a ** b
-print(result)
+
+
+
+def exponentCalculations(a, b):
+    result = a ** b
+    print(f"{a} to power of {b} = {result}")
+
+exponentCalculations(2, 2)

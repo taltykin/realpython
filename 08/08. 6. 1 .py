@@ -1,5 +1,12 @@
+# try:
+#     user = int(input("Enter a number: "))
+#     print(user)
+# except ValueError:
+#     print("Not A Number!")
+
 try:
-    user = int(input("Enter a number: "))
-    print(user)
+    string = str(input("Введите строку: "))
+    number = int(input("Введите число: "))
+    print(string[number])
 except ValueError:
-    print("Not A Number!")
+    print("Введите правильное значение!")

@@ -1,13 +1,18 @@
 from random import randint
 
-def flip_coin():
-    if randint(0, 1) == 0:
-        print("0")
-    else:
-        print("1")
+def roll():
+    return randint(1, 6)
 
-flip_coin()
 
+reps = 10_000
+avar = 0
+counter = 0
+for item in range(reps):
+    counter = counter + roll()
+
+avar = counter / reps
+
+print(avar)
 
 # def roll():
 #     """Return random integer between 1 and 6"""

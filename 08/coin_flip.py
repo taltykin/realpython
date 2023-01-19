@@ -1,19 +1,41 @@
-from random import randint
+import random
 
-def roll():
-    return randint(1, 6)
+# def coin_flip():
+#     if random.randint(0, 1) == 0:
+#         return "heads"
+#     else:
+#         return "tails"
+
+# heads = 0
+# tails = 0
+
+# for n in range(10000):
+#     if coin_flip() == "heads":
+#         heads = heads + n
+#     else:
+#         tails = tails + n
+
+# print(f"heads are {heads}, tails are {tails}")
 
 
-reps = 10_000
-avar = 0
-counter = 0
-for item in range(reps):
-    counter = counter + roll()
+def coin_flip():
+    first_try = random.randint(0, 1)
 
-avar = counter / reps
+    attemption_counter = 1
 
-print(avar)
+    while first_try == random.randint(0, 1):
+        attemption_counter = attemption_counter + 1
 
-# def roll():
-#     """Return random integer between 1 and 6"""
-#     return randint(1, 6)
+    attemption_counter = attemption_counter + 1
+    return attemption_counter
+
+def attemption(num_trials):
+    total = 0
+    for n in range(num_trials):
+        total = total + coin_flip()
+    
+    ratio = total / num_trials
+
+    print(ratio)
+
+attemption(10000)

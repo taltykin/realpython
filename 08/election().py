@@ -26,24 +26,28 @@ def elect():
     totally_B = 0
 
     for i in range(0, 10000):
+        votes_a = 0
+        votes_b = 0
         if random() < .87:
-            totally_A = totally_A + 1
+            votes_a = votes_a + 1
         else:
-            totally_B = totally_B + 1
+            votes_b = votes_b + 1
 
         if random() < .65:
-            totally_A = totally_A + 1
+            votes_a = votes_a + 1
         else:
-            totally_B = totally_B + 1
+            votes_b = votes_b + 1
 
         if random() < .17:
+            votes_a = votes_a + 1
+        else:
+            votes_b = votes_b + 1
+        if votes_a > votes_b:
             totally_A = totally_A + 1
         else:
-            totally_B = totally_B + 1
-
-    if totally_A > totally_B:
-        print(f"A has won {totally_A}")
-    else:
-        print(f"B has won {totally_B}")
+            totally_B = totally_B + 1 
+    
+    print(totally_A)
+    print(totally_B)
 
 elect()

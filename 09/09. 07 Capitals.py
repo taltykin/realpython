@@ -11,6 +11,15 @@ capitals_dict = {
     'Florida': 'Tallahassee',
     'Georgia': 'Atlanta', 
 }
-capitals = dict(capitals_dict) 
 
-print(capitals)
+state, capital = random.choice(list(capitals_dict.items()))
+answer = 0
+while True:
+    answer = input(f"What is the capital of {state} :").lower()
+    if answer == "exit":
+        print(f"The capital of '{state}' is '{capital}'.")
+        print("Goodbye")
+        break
+    elif answer == capital.lower():
+        print("Correct! Nice job.")
+        break
